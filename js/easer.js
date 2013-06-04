@@ -1,5 +1,5 @@
 /*
-http://github.com/mmmpa/Easer
+http://github.com/mmmpa/
 */
 var Easer = (function () {
     function Easer() { }
