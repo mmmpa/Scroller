@@ -24,7 +24,7 @@ class Scroller {
     static scroll(anchor: string, frames: number, margin: number): Function {
         var target: JQuery = $(anchor);
         if (!target) {
-            return ()=>{};
+            return () => { };
         }
         return () => {
             interval_id && clearInterval(interval_id);
@@ -36,7 +36,7 @@ class Scroller {
             var req_height: number = body_height - target_y;
             var max_scroll: number = body_height - win_height;
 
-            var end: number = req_height > win_height ? target_y : max_scroll;
+            var end: number = req_height > win_height ? target_y < 0 ? 0 : target_y : max_scroll;
             var start: number = $(window).scrollTop()
 
             var ease: number[] = EaseName.EXPONENTIAL.make(EaseMode.IN_OUT, frames, 5);
